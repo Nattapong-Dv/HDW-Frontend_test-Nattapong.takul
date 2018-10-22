@@ -15,10 +15,10 @@
 - [x] Search
 - [ ] Pagination
 
-#Tool
--[Angular](https://angular.io)
--[Angular Material](https://material.angular.io)
--[Visual Studio Code](https://code.visualstudio.com)
--[firebase](https://firebase.google.com)
+# Tool
+- [Angular](https://angular.io)
+- [Angular Material](https://material.angular.io)
+- [Visual Studio Code](https://code.visualstudio.com)
+- [firebase](https://firebase.google.com)
 
 
