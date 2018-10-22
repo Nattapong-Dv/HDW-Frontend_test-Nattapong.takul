@@ -1,0 +1,37 @@
+<!-- หน้าแรก --> 
+<div class="home">
+  <div class="continer_home">
+    <!-- ค้นหาสินค้า -->
+<div class="row">
+    <div class="col-md-4 offset-md-1">
+      <div class="input-group">
+        <input type="text" class="form-control" [(ngModel)]="searchValue" [ngModelOptions]="{standalone: true}" placeholder="ค้นหาสินค้า" (keyup)="searchByName()">
+        <div class="input-group-append">
+          <span class="input-group-text"><ion-icon class="icon" name="search"></ion-icon></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- แสดงรายละเอียดสินค้าที่อยู่ใน database ของ firebase -->
+  <div class="list-group users-list">
+    <div *ngFor="let item of items" class="list-group-item">
+      <div class="row">
+        <div class="col col-md-2 image-col">
+          <img class="image" [src]="item.payload.doc.data().avatar">
+        </div>
+        <div class="col col-md-8 text-col">
+          <h5 class="mb-1">{{item.payload.doc.data().name}}</h5>
+          <small>รหัสสินค้า: {{item.payload.doc.data().code}}</small><br>
+          <small>ราคา: {{item.payload.doc.data().price}} บาท</small><br>
+          <small>รายละเอียด: {{item.payload.doc.data().description}}</small>
+        </div>
+        <div class="col col-md-2 actions-col">
+          <button class="btn btn-outline-primary action" (click)="viewDetails(item)" type="button">
+            <ion-icon class="icon" name="arrow-round-forward"></ion-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>

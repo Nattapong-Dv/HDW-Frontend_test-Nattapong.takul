@@ -1,0 +1,46 @@
+<div class="edit-page">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">แก้ไขรายการ</li>
+    </ol>
+  </nav>
+  <div class="page-content">
+    <div class="row">
+      <!-- เปลี่ยนรูป -->
+      <div class="col col-md-4">
+        <img class="img-avatar" [src]="item.avatar">
+        <button mat-stroked-button class="change-img-button" color="primary" (click)="openDialog()">เปลี่ยนรูป</button>
+    </div>
+    <div class="col col-md-8">
+      <form class="edit-form" [formGroup]="exampleForm" novalidate (ngSubmit)="onSubmit(exampleForm.value)">
+        <!-- ชื่อสินค้า -->
+        <div class="form-group">
+          <mat-form-field class="input-style">
+            <input matInput placeholder="ชื่อสินค้า" class="form-control" formControlName="name">
+          </mat-form-field>
+          <ng-container *ngFor="let validation of validation_messages.name">
+            <mat-error *ngIf="exampleForm.get('name').hasError(validation.type) && (exampleForm.get('name').dirty || exampleForm.get('name').touched)">{{validation.message}}</mat-error>
+          </ng-container>
+          </div>
+          <!-- รหัสสินค้า -->
+          <div class="form-group">
+            <mat-form-field class="input-style">
+              <input matInput type="number" placeholder="รหัสสินค้า" class="form-control" formControlName="code">
+            </mat-form-field>
+            <ng-container *ngFor="let validation of validation_messages.code">
+              <mat-error *ngIf="exampleForm.get('code').hasError(validation.type) && (exampleForm.get('code').dirty || exampleForm.get('code').touched)">{{validation.message}}</mat-error>
+            </ng-container>
+          </div>     
+          <div class="row submit-button-container">
+            <div class="col-md-4">
+              <button mat-raised-button class="submit-button" color="primary" type="submit" [disabled]="!exampleForm.valid">Save</button>
+            </div>
+            <div class="col-md-4">
+              <button mat-raised-button class="delete-button" color="warn" type="button" (click)="delete()">Delete</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
