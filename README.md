@@ -1,11 +1,11 @@
 # HDW-Frontend_test-nattapong_takul
-test 1
+- test 1
 
 # Install
-npm install
-npm start
+- npm install
+- npm start
 
-#List
+# List
 - [x] Preview 
 - [x] Add
 - [x] Product Detail
