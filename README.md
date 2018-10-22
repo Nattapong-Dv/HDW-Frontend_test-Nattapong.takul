@@ -18,6 +18,9 @@
 - [x] Search
 - [ ] Pagination
 
+# Future
+- Chart.JS (coming soon)
+
 # Tool
 - [Angular](https://angular.io)
 - [Angular Material](https://material.angular.io)
