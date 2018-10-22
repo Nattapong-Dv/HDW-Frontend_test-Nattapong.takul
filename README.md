@@ -11,7 +11,7 @@
 - [x] Product Detail
 - [x] Update
 - [x] Delete
-- [ ] Delete
+- [ ] Delete Multiple 
 - [x] Search
 - [ ] Pagination
 
